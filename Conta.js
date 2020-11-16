@@ -1,3 +1,5 @@
+import { Cliente } from "./Cliente.js";
+
 export class Conta {
 
     static QuantidadeContas = 0;
