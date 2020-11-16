@@ -1,0 +1,12 @@
+{
+    "name": "Banco",
+    "version": "1.0.0",
+    "description": "Teste POO",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Erro\" && exit 1"
+    },
+    "author": "",
+    "license": "ISC",
+    "type": "module"
+}
