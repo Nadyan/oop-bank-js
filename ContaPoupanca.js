@@ -11,4 +11,12 @@ export class ContaPoupanca extends Conta {
     calculaJuros() {
         return this._saldo * this._percJuros;
     }
+
+    sacar(valor) {
+        
+        // método sobrescrito da classe Conta
+
+        const taxa = 1.02;
+        return this._sacar(valor, taxa);
+    }
 }

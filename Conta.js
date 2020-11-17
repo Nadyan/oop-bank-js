@@ -1,10 +1,20 @@
 import { Cliente } from "./Cliente.js";
 
+// Classe Conta abstrata
+// Não pode ser instanciada
+// diretamente, apenas herdada
+
 export class Conta {
 
     static QuantidadeContas = 0;
 
     constructor(agencia, numero, cliente) {
+        
+        if (this.constructor == Conta) {
+            // Classe abstrata, nao deve ser instanciada diretamente
+            throw new Error("Você não deveria instanciar um objeto do tipo 'Conta' (Classe abstrata).");
+        }
+        
         this._agencia = agencia;
         this._numero = numero;
         if (cliente instanceof Cliente) {
@@ -39,11 +49,22 @@ export class Conta {
     }
 
     sacar(valor) {
-        if (valor > this._saldo) {
+        // Método abstrato, 
+        // deve ser sobrescrito na classe filha
+
+        throw new Error("O método 'sacar' da classe Conta é abstrato e deve ser sobrescrito.");
+    }
+
+    _sacar(valor, taxa) {
+        
+        const valorSacar = valor * taxa;
+        
+        if (valorSacar > this._saldo) {
             return;
         }
-        this._saldo -= valor;
-        return this._saldo;
+        
+        this._saldo -= valorSacar
+        return valorSacar;
     }
 
     depositar(valor) {

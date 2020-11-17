@@ -6,8 +6,9 @@ const cliente = new Cliente("Nadyan", "04994967954");
 const cc = new ContaCorrente(1394, 29244, cliente);
 const cp = new ContaPoupanca(1394, 29244, 51, cliente);
 
-console.log(cc);
-console.log(cp);
+//console.log(cc);
+//console.log(cp);
 
 cp.depositar(100);
-console.log(cp.calculaJuros());
+cp.sacar(10);
+console.log(cp.saldo);
